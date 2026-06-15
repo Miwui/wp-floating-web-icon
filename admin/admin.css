@@ -1,0 +1,106 @@
+/* ── Toggle switch ──────────────────────────────────────────── */
+.au-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.au-toggle input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.au-toggle-track {
+    position: relative;
+    width: 48px;
+    height: 26px;
+    background: #ccd0d4;
+    border-radius: 26px;
+    transition: background .2s;
+    flex-shrink: 0;
+}
+
+.au-toggle input:checked ~ .au-toggle-track {
+    background: #2271b1;
+}
+
+.au-toggle-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    transition: transform .2s;
+}
+
+.au-toggle input:checked ~ .au-toggle-track .au-toggle-thumb {
+    transform: translateX(22px);
+}
+
+.au-toggle-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #50575e;
+    min-width: 52px;
+}
+
+.au-toggle input:checked ~ .au-toggle-label {
+    color: #2271b1;
+}
+
+
+
+.aviso-umag-wrap h1 {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+}
+
+.aviso-umag-wrap .description {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Corner picker – cuadrícula 2×2 que simula las esquinas */
+.au-corner-picker {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+    width: 320px;
+    background: #f0f0f1;
+    border: 1px solid #ccd0d4;
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.au-corner {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background .15s;
+}
+
+.au-corner:hover  { background: #dce0e5; }
+.au-corner.active { background: #2271b1; color: #fff; }
+.au-corner.active input { accent-color: #fff; }
+
+/* Orden de las esquinas en la cuadrícula */
+.au-corner.top-left     { grid-column: 1; grid-row: 1; }
+.au-corner.top-right    { grid-column: 2; grid-row: 1; justify-content: flex-end; }
+.au-corner.bottom-left  { grid-column: 1; grid-row: 2; }
+.au-corner.bottom-right { grid-column: 2; grid-row: 2; justify-content: flex-end; }
+
+/* Image picker */
+.au-image-picker { display: flex; flex-direction: column; gap: 8px; }
+.au-image-picker img { border: 1px solid #ccd0d4; border-radius: 4px; padding: 4px; background:#fff; }
